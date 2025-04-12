@@ -1,47 +1,47 @@
-# Библиотека Телеграм Бот
+# Telegram Library Bot
 
-Телеграм бот для управления небольшой библиотекой. Позволяет вести учет читателей, книг, залогов и быстро обрабатывать выдачу/возврат книг.
+A Telegram bot for managing a small library. Allows tracking readers, books, deposits, and quickly processing book checkouts and returns.
 
-## Функциональность
+## Features
 
-- Регистрация новых читателей с контактной информацией
-- Выдача книг читателям с учетом внесения залога
-- Возврат книг с отслеживанием залогов
-- Просмотр списка активных выдач книг
-- Просмотр списка всех зарегистрированных читателей
+- Registration of new readers with contact information
+- Lending books to readers with deposit tracking
+- Book returns with deposit management
+- View list of active book loans
+- View list of all registered readers
 
-## Как запустить
+## How to Run
 
-1. Скопируйте файл конфигурации и добавьте ваш Telegram токен:
+1. Copy the configuration file and add your Telegram token:
 
    ```
    cp config/.env.example config/.env
    ```
 
-   Затем откройте файл `config/.env` и добавьте ваш токен от BotFather.
+   Then open the `config/.env` file and add your token from BotFather.
 
-2. Запустите бота с помощью Docker Compose:
+2. Start the bot using Docker Compose:
 
    ```
    docker-compose up -d
    ```
 
-3. Для остановки бота:
+3. To stop the bot:
 
    ```
    docker-compose down
    ```
 
-## Использование
+## Usage
 
-1. Начните общение с ботом, отправив команду `/start`
-2. В меню выберите нужное действие:
-   - Добавить нового читателя
-   - Выдать книгу
-   - Принять возврат книги
-   - Просмотреть список читателей
-   - Просмотреть список выданных книг
+1. Start interacting with the bot by sending the `/start` command
+2. Select the desired action from the menu:
+   - Add a new reader
+   - Check out a book
+   - Accept a book return
+   - View the list of readers
+   - View the list of checked out books
 
-## Система залогов
+## Deposit System
 
-Система работает на основе фиксированного залога в 50 евро. Читатель может взять несколько книг (до 5) за один залог. Залог возвращается, когда читатель возвращает все книги.
+The system works based on a fixed deposit of 50 euros. A reader can borrow multiple books (up to 5) for a single deposit. The deposit is returned when the reader returns all books.
