@@ -248,7 +248,7 @@ async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         )
         return SELECT_READER_FOR_BOOKS
     else:
-        await update.message.reply_text(' '.join[(get_random_animal_emoji() for i in range(3))])
+        await update.message.reply_text(' '.join([get_random_animal_emoji() for i in range(3)]))
         return MAIN_MENU
 
 
@@ -483,6 +483,7 @@ def main() -> None:
     application = Application.builder().token(os.environ.get("TELEGRAM_TOKEN")).build()
 
     async def log_update(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """log incoming updates"""
         logger.debug(f"received update: {update}")
 
     application.add_handler(MessageHandler(filters.ALL, log_update), group=-1)
