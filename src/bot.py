@@ -189,7 +189,7 @@ async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         keyboard.append([ACTION_BACK])
 
         await update.message.reply_text(
-            "🔎 Pick a reader to check out a book:",
+            "🔎 Кому выдать книгу?",
             reply_markup=ReplyKeyboardMarkup(keyboard, one_time_keyboard=True, resize_keyboard=True),
         )
         return CHOOSE_READER
@@ -243,7 +243,7 @@ async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         keyboard.append([ACTION_BACK])
 
         await update.message.reply_text(
-            "🔎",
+            "🔎 Выбрите читателя:"
             reply_markup=ReplyKeyboardMarkup(keyboard, one_time_keyboard=True, resize_keyboard=True),
         )
         return SELECT_READER_FOR_BOOKS
