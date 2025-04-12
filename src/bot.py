@@ -218,7 +218,8 @@ async def main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         else:
             response = ""
             for i, reader in enumerate(readers, 1):
-                response += f"{i}. {reader['name']}: {reader['contact']}\n"
+                deposit_info = f"💰 {reader['deposit_amount']}" if reader['deposit_amount'] > 0 else ""
+                response += f"{i}. {reader['name']}: {reader['contact']} ({deposit_info})\n"
             await update.message.reply_text(response)
         return await start(update, context)
     elif choice == ACTION_GET_LOANS:
